@@ -192,7 +192,7 @@ def train(
             loss_list.append(loss.item())
             lr_scheduler.step()
 
-            if (it + 1) == (total_iters // 2) or it == 99:
+            if (it + 1) == (total_iters // 2):
 
                 auroc_sp_list, ap_sp_list, f1_sp_list = [], [], []
                 auroc_px_list, ap_px_list, f1_px_list, aupro_px_list = [], [], [], []
@@ -230,7 +230,13 @@ def train(
                 for item, test_data in zip(item_list, test_data_list):
                     test_dataloader = torch.utils.data.DataLoader(test_data, batch_size=batch_size, shuffle=False,
                                                                 num_workers=4)
-                    results = evaluation_batch(model, test_dataloader, device, max_ratio=0.01, resize_mask=224)
+                    if 'mvtec' in args.data_path:
+                        m = 0.01
+                    elif 'VisA' in args.data_path:
+                        m = 0
+                    elif 'BTech' in args.data_path:
+                        m = 0.02
+                    results = evaluation_batch(model, test_dataloader, device, max_ratio=m, resize_mask=224)
                     auroc_sp, ap_sp, f1_sp, auroc_px, ap_px, f1_px, aupro_px = results
 
                     auroc_sp_list.append(auroc_sp)
