@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# 模型权重和训练输出
+backbones/weights/
+output_models/
+*.pth
+*.pt
+*.ckpt
+
+# 本地环境变量文件
+.env

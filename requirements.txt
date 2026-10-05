@@ -1,0 +1,22 @@
+# Reference environment: Python 3.9.13, Linux x86_64
+# PyTorch CUDA build: 11.3
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
+matplotlib==3.3.3
+numpy==1.23.0
+opencv-python==4.11.0.86
+pandas==1.3.5
+Pillow==9.2.0
+scikit-image==0.19.2
+scikit-learn==1.0.2
+scipy==1.13.1
+tabulate==0.8.10
+torch==1.12.1+cu113
+torchvision==0.13.1+cu113
+tqdm==4.67.1
+ptflops==0.7
+timm==0.9.12
+
+# Required by the current training imports.
+torchinfo==1.8.0
+colorama==0.4.5
