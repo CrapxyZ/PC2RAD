@@ -1,6 +1,7 @@
 <div align="center">
 
 # Multi-class Unsupervised Anomaly Detection via Progressive Capacity-Constrained Feature Reconstruction
+</div>
 > - 🚧 This README is a work in progress. Additional figures and documentation will be added soon.
 
 
